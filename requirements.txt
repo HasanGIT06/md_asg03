@@ -6,8 +6,8 @@ matplotlib
 seaborn
 
 # ── Machine Learning ────────────────────────────────────────────────────────
-scikit-learn
-joblib
+scikit-learn==1.5.2
+joblib==1.4.2
 
 # ── Hyperparameter Optimization ─────────────────────────────────────────────
 optuna
