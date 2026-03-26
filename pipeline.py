@@ -14,12 +14,9 @@ def run_pipeline():
     
     print("Step 2: Feature Engineering")
     df = feature_engineering(df)
-    print(df.columns)
     
     print("\nStep 3: Preprocessing")
     train_scaled, test_scaled, cat_features, num_features = preprocess_data(df, is_train=True)
-    print(num_features)
-    print(train_scaled.columns)
     pipeline = build_churn_pipeline(num_features, cat_features)
 
     print("\nStep 4: Training")
