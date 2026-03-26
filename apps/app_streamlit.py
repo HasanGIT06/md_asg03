@@ -6,9 +6,7 @@ from pathlib import Path
 from feature_engineering.feature_engineering import feature_engineering
 from preprocessing.preprocessing import preprocess_data
 
-# Load preprocessor and model
-encoders = joblib.load(Path(__file__).parent/"artifacts/preprocessor.pkl")
-model  = joblib.load(Path(__file__).parent/"artifacts/model.pkl")
+model  = joblib.load(Path(__file__).parent.parent/"artifacts/model.pkl")
 
 def main():
     st.title("ASG 04 MD - Leonardus Hasan - Spaceship Titanic Model Deployment")

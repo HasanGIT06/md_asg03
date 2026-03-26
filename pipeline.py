@@ -16,14 +16,14 @@ def run_pipeline():
     df = feature_engineering(df)
     
     print("\nStep 3: Preprocessing")
-    train_scaled, test_scaled, cat_features, num_features = preprocess_data(df, is_train=True)
+    train_df, test_df, cat_features, num_features = preprocess_data(df, is_train=True)
     pipeline = build_churn_pipeline(num_features, cat_features)
 
     print("\nStep 4: Training")
-    run_id = train(pipeline, train_scaled)
+    run_id = train(pipeline, train_df)
 
     print("\nStep 5: Evaluation")
-    accuracy, precision, recall = evaluate(test_scaled, run_id)
+    evaluate(test_df, run_id)
 
 if __name__ == "__main__":
     run_pipeline()
